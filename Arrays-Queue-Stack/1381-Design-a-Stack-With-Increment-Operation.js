@@ -97,7 +97,6 @@ class CustomStack {
 }
 
 /********* */
-// ! why?
 /* 优化的前缀和
 * 思路
 维护一个大小为当前栈长度的 incrementals，而不是 O(maxSize)O(maxSize) 。
@@ -123,11 +122,12 @@ class CustomStack {
 	}
 	pop() {
 		if (this.count === 0) return -1;
-		this.count -= 1;
 
 		if (this.count >= 1) {
-			this.incrementals[-2] += this.incrementals[-1];
+			this.incrementals[this.count - 2] += this.incrementals[this.count - 1];
 		}
+
+		this.count -= 1;
 		return this.stack.pop() + this.incrementals.pop();
 	}
 	increment(k, val) {

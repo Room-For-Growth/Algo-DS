@@ -173,7 +173,7 @@ LISP 的 S-表达式中广泛地使用了前缀记法，S-表达式中使用了�
 - [1381] https://leetcode-cn.com/problems/design-a-stack-with-increment-operation/
 - [394] https://leetcode-cn.com/problems/decode-string/
 - [946] https://leetcode-cn.com/problems/validate-stack-sequences/
-- [连个计算器] https://mp.weixin.qq.com/s?__biz=MzI4MzUxNjI3OA==&mid=2247486874&idx=2&sn=3f42546c132983bf22828a99b1c6e7b4&chksm=eb88c183dcff48956d97d1b67e8d070b9561be26f66006773d153457494ca8c43db73a8e7343&token=1469603194&lang=zh_CN#rd
+- [两个计算器] https://mp.weixin.qq.com/s?__biz=MzI4MzUxNjI3OA==&mid=2247486874&idx=2&sn=3f42546c132983bf22828a99b1c6e7b4&chksm=eb88c183dcff48956d97d1b67e8d070b9561be26f66006773d153457494ca8c43db73a8e7343&token=1469603194&lang=zh_CN#rd
 
 ## 队列 Queue
 
