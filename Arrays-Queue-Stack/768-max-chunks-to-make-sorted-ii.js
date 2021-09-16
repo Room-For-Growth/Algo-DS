@@ -156,3 +156,21 @@ var maxChunksToSorted = function (arr) {
 
 	return count;
 };
+
+/*
+
+* leetcode sample solution, 80% tile	
+*/
+
+var maxChunksToSorted = function (arr) {
+	const stack = [];
+	let max = -Infinity;
+	for (let num of arr) {
+		max = Math.max(max, num);
+		while (stack[stack.length - 1] > num) {
+			stack.pop();
+		}
+		stack.push(max);
+	}
+	return stack.length;
+};
