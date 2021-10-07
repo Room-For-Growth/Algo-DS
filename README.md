@@ -1,5 +1,6 @@
-# Daily Algo
-
+# Daily Algo 📝
+![Python](https://img.shields.io/badge/python-3776ab?style=for-the-badge&logo=python&logoColor=ffdd54)
+![JavaScript](https://img.shields.io/badge/javascript-A9A9A9.svg?style=for-the-badge&logo=javascript&logoColor=%F7DF1E)
 ### ARRAY
 
 - 989 Add to Array-Form of Integer
@@ -85,6 +86,7 @@
 - 3
 - 239
 
+---
 ### BINARY SEARCH
 - 35
 
