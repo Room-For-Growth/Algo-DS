@@ -21,6 +21,9 @@ queue.empty(); // 返回 false
 你只能使用标准的栈操作 -- 也就是只有 push to top, peek/pop from top, size, 和 is empty 操作是合法的。
 你所使用的语言也许不支持栈。你可以使用 list 或者 deque（双端队列）来模拟一个栈，只要是标准的栈操作即可。
 假设所有操作都是有效的、 （例如，一个空的队列不会调用 pop 或者 peek 操作）。
+
+Similar question:
+225. Implement Stack using Queues: https://leetcode.com/problems/implement-stack-using-queues/
 ```;
 /*
 思路
@@ -80,3 +83,25 @@ class MyQueue {
 		return this.outputStack.length === 0 && this.helperStack.length === 0;
 	}
 }
+
+/*
+* 扩展
+
+	- 类似的题目有用队列实现栈，思路是完全一样的，大家有兴趣可以试一下。
+	- 栈混洗也是借助另外一个栈来完成的，从这点来看，两者有相似之处。
+
+* 延伸阅读
+
+	- 实际上现实中也有使用两个栈来实现队列的情况，那么为什么我们要用两个 stack 来实现一个 queue？
+
+	- 其实使用两个栈来替代一个队列的实现是为了在多进程中分开对同一个队列对读写操作。一个栈是用来读的，另一个是用来写的。当且仅当读栈满时或者写栈为空时，读写操作才会发生冲突。
+
+	- 当只有一个线程对栈进行读写操作的时候，总有一个栈是空的。在多线程应用中，如果我们只有一个队列，为了线程安全，我们在读或者写队列的时候都需要锁住整个队列。而在两个栈的实现中，只要写入栈不为空，那么push操作的锁就不会影响到 pop。
+
+? When we should use two stacks to implement a queue?
+	- The application for this implementation is to separate read & write of a queue in multi-processing. One of the stack is for read, and another is for write. They only interfere each other when the former one is full or latter is empty.
+	- When there's only one thread doing the read/write operation to the stack, there will always one stack empty. However, in a multi-thread application, if we have only one queue, for thread-safety, either read or write will lock the whole queue. In the two stack implementation, as long as the second stack is not empty, push operation will not lock the stack for pop.
+	- https://stackoverflow.com/questions/2050120/why-use-two-stacks-to-make-a-queue/2050402#2050402
+	- (The point is that adding (removing) an element to (from) the front of a purely functional list is O(1) and the reverse operation which is O(n) is amortised over all the dequeues, so it's close to O(1), thereby giving you a ~O(1) queue implementation with immutable data structures.)
+
+*/

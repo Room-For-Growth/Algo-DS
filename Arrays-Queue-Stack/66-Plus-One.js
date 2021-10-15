@@ -71,3 +71,4 @@ const plusOne = (digits) => {
 
 	return digits;
 };
+console.log(plusOne([1, 2, 9]));
