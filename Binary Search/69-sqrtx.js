@@ -136,27 +136,6 @@ var mySqrt = function (x) {
 	return ans;
 };
 
-Language: JavaScript``` JavaScript
-var mySqrt = function (x) {
-	if (x === 0) return 0;
-	if (x === 1) return 1;
-	var left = 0;
-	var right = x;
-	var mid;
-	var sqrt;
-	var ans;
-	while (left < right) {
-		mid = Math.floor((left + right) / 2);
-		sqrt = mid * mid;
-		if (sqrt < x) {
-			ans = mid;
-			left = mid + 1;
-		} else if (sqrt > x) {
-			right = mid;
-		} else {
-			return mid;
-		}
-	}
-	return ans;
-};
-```;
+/*
+ * solution 6 牛顿迭代
+ */
